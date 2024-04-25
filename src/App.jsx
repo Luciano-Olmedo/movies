@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import Cards from './cards'
 //scale 3af207
-
+// https://api.themoviedb.org/3/movie/550?api_key=738a868f38e105fd1a1fc07338653dc4 example
 const App = () => {
+  const urlBase =asd
+  const API_KEY = '738a868f38e105fd1a1fc07338653dc4'
   const [busqueda, setBusqueda] = useState('')
   const [peluculas, setPeliculas] = useState('')
 
@@ -10,9 +12,11 @@ const App = () => {
     setBusqueda(e.target.value)
 
   }
-  const fetchPeliculas = async() => {
+  const fetchPeliculas = async () => {
     try {
-      
+
+      const response = await fetch(``)
+
     } catch (error) {
       console.error(error)
     }
