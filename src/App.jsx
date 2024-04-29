@@ -14,19 +14,23 @@ const App = () => {
     setBusqueda(e.target.value)
 
   }
-  const fetchPeliculas = async () => {
-    try {
-      const response = await fetch(`${urlBase}?query=${busqueda}&api_key=${API_KEY}`)
-      const data = await response.json()      
-      setPeliculas(data)
-    } catch (error) {
-      console.error(error)
-    }
-  }
   const handleSubmit = (e) => {
     e.preventDefault()
     fetchPeliculas()
   }
+  const fetchPeliculas = async () => {
+    try {
+      const response = await fetch(`${urlBase}?query=${busqueda}&api_key=${API_KEY}`)
+      const data = await response.json()
+      console.log(data)
+      return data
+      //setPeliculas(data)
+      
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
 
   return (
     <>
@@ -52,7 +56,7 @@ const App = () => {
           <Cards />
           <Cards />
           <Cards />
-         
+
 
         </div>
 
