@@ -21,10 +21,8 @@ const App = () => {
   const fetchPeliculas = async () => {
     try {
       const response = await fetch(`${urlBase}?query=${busqueda}&api_key=${API_KEY}`)
-      const data = await response.json()
-      console.log(data)
-      return data
-      //setPeliculas(data)
+      const data = await response.json()           
+      setPeliculas(data)
       
     } catch (error) {
       console.error(error)
