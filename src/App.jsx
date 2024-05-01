@@ -3,7 +3,7 @@ import Cards from './Cards'
 //scale 3af207
 
 const App = () => {
-  const urlBase = 'api.themoviedb.org/3/movie'
+  const urlBase = 'https://api.themoviedb.org/3/search/movie'
   const API_KEY = '738a868f38e105fd1a1fc07338653dc4'
 
 
@@ -21,9 +21,9 @@ const App = () => {
   const fetchPeliculas = async () => {
     try {
       const response = await fetch(`${urlBase}?query=${busqueda}&api_key=${API_KEY}`)
-      const data = await response.json()           
-      setPeliculas(data)
-      
+      const data = await response.json()
+      setPeliculas(data.results)
+
     } catch (error) {
       console.error(error)
     }
@@ -34,11 +34,11 @@ const App = () => {
     <>
       <div className=' grid place-items-center  lg:mt-4'  >
         <div className='flex '>
-          <h4 className='text-3xl text-center font-bold text-white '>Magic Movies</h4>
+          <h4 className='text-3xl text-center font-bold  '>Magic Movies</h4>
         </div>
 
         <form className='mt-6 flex gap-4' onSubmit={handleSubmit}>
-          <button type='submit' className=' p-4 border-2 border-white rounded-lg text-2xl hover:bg-[#3af207] text-white'>Search Movies</button>
+          <button type='submit' className=' p-4 border-2 rounded-lg text-2xl hover:bg-[#3af207] '>Search Movies</button>
           <input
             type="text"
             className='text-center w-96 rounded-lg text-2xl   '
@@ -50,15 +50,18 @@ const App = () => {
         </form>
 
         <div className='grid grid-cols-4 gap-10 place-content-center'>
-          <Cards />
-          <Cards />
-          <Cards />
-          <Cards />
+          {peliculas.map((pelicula) => (
+            <Cards key={pelicula.id}>
+              <h3>{pelicula.title}</h3>
+              <div>{pelicula.overview}</div>
+            </Cards>
+          ))}
 
 
         </div>
+        <div>
 
-
+        </div>
 
       </div>
     </>
