@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Cards from './Cards'
+//import Cards from './Cards'
 //scale 3af207
 
 const App = () => {
@@ -51,10 +51,10 @@ const App = () => {
 
         <div className='grid grid-cols-4 gap-10 place-content-center'>
           {peliculas.map((pelicula) => (
-            <Cards key={pelicula.id}>
-              <h3>{pelicula.title}</h3>
-              <div>{pelicula.overview}</div>
-            </Cards>
+            <div>
+              <img src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.title} />
+
+            </div>
           ))}
 
 
