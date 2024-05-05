@@ -2,7 +2,7 @@ import React from 'react';
 
 const Cards = ({ peliculas }) => {
   return (
-    <div className='grid grid-cols-4 gap-10 place-content-center mt-10  rounded-lg'>
+    <div className='grid grid-cols-1 lg:grid-cols-4 gap-10 place-content-center mt-10  rounded-lg'>
       {peliculas.map((pelicula) => (
         <div key={pelicula.id} className='border-2 rounded-lg '>
           <h3 className='text-2xl font-bold mt-2 text-center'>{pelicula.title}</h3>
