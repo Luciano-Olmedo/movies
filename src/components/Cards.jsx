@@ -6,8 +6,8 @@ const Cards = ({ peliculas }) => {
       {peliculas.map((pelicula) => (
         <div key={pelicula.id} className='border-2 rounded-lg '>
           <h3 className='text-2xl font-bold mt-2 text-center text-white'>{pelicula.title}</h3>
-          <img className="object-cover border-2 rounded-lg mt-10"src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.title} />
-          <p className='font-thin text-white mt-1'>{pelicula.overview}</p>
+          <img className="object-cover border-2 rounded-lg mt-10 w-[280px] h-[160px]"src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.title} />
+          <p className='font-thin text-white mt-1 line-clamp-5'>{pelicula.overview}</p>
         </div>
       ))}
     </div>
