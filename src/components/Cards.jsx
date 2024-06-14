@@ -2,16 +2,20 @@ import React from 'react';
 
 const Cards = ({ peliculas }) => {
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-4 gap-10 place-content-center mt-10  rounded-lg'>
+    <div className='lg:grid-cols-2  lg:gap-4 lg:mt-10 grid grid-cols-1 gap-4 '>
       {peliculas.map((pelicula) => (
-        <div key={pelicula.id} className='border-2 rounded-lg '>
-          <h3 className='text-2xl font-bold mt-2 text-center text-white'>{pelicula.title}</h3>
-          <img className="object-cover border-2 rounded-lg mt-10 w-[280px] h-[160px]"src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.title} />
-          <p className='font-thin text-white mt-1 line-clamp-5'>{pelicula.overview}</p>
-        </div>
+        <article key={pelicula.id} className=' flex lg:h-[226px] lg:w-[480px] h-[260px] mx-auto rounded-3xl bg-white p-8 hover:shadow-inner hover:shadow-green-800 cursor-pointer transition-all duration-500 hover:scale-105'>
+
+          <div>
+            <h2 className="text-xl font-bold">{pelicula.title}</h2>
+            <p className="mt-3 text-[12px] lg:text-sm text-[#424242] line-clamp-5">{pelicula.overview}</p>
+          </div>
+          <img className="lg:h-[156px] lg:w-[180px] w-[120px] h-[100px] rounded-3xl object-cover  " src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`} alt={pelicula.title} />
+        </article>
       ))}
     </div>
   );
 };
 
-export default Cards;
+
+  export default Cards;
