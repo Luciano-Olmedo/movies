@@ -31,14 +31,14 @@ const App = () => {
     <>
       <div className=' container mx-auto'  >
         <div className='flex justify-center  mt-4 '>
-          <h4 className='text-3xl text-center font-bold text-white '>Magic Movies</h4>
+          <h4 className='text-3xl text-center font-bold text-green-400 '>Magic Movies</h4>
         </div>
 
         <form className='grid grid-cols-1 lg:mt-14 lg:flex gap-10 place-content-center' onSubmit={handleSubmit}>
-          <button type='submit' className='text-white bg-transparent p-4 lg:p-0 border-2 rounded-full font-bold text-2xl w-40 h-24 lg:w-60 lg:h-10 hover:text-[#f3db56] mt-10 lg:mt-0 mx-auto  border-black'>Search Movies</button>
+          <button type='submit' className='text-green-400 bg-transparent p-4 lg:p-0 border-2 rounded-full font-bold text-2xl w-40 h-24 lg:w-60 lg:h-10 hover:text-[#f3db56] mt-10 lg:mt-0 mx-auto  border-black'>Search Movies</button>
           <input
             type="text"
-            className='text-center w-60 mx-auto lg:w-96 rounded-lg text-2xl border-2 border-black bg-gray-200 '
+            className='text-center w-60 mx-auto lg:w-96 rounded-lg text-2xl border-2 border-black  '
             placeholder='Enter movie to search'
             value={busqueda}
             onChange={handleInputChange}
